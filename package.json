@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "commit": "git cz commit"
+    "commit": "git cz commit",
+    "compile:css": "npx tailwindcss -i ./styles.css -o ./dist/styles.css --watch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/guillemsarda/globo/issues"
   },
-  "homepage": "https://github.com/guillemsarda/globo#readme"
+  "homepage": "https://github.com/guillemsarda/globo#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.1"
+  }
 }
