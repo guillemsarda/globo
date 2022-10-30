@@ -1,5 +1,13 @@
 $(document).ready(() => {
-  const $h1 = $('<h1>');
-  $h1.text('hello').addClass('text-3xl font-bold underline');
-  $('.main').append($h1);
+  const $imgPckr = $('#image-picker');
+  const $imgInput = $('#image-input');
+  $imgPckr.on('click', () => $imgInput.trigger('click'));
+  $imgPckr.hover(
+    () => {
+      $('#button-title').removeClass('hidden');
+    },
+    () => {
+      $('#button-title').addClass('hidden');
+    }
+  );
 });

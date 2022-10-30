@@ -10,8 +10,39 @@
     <title>Globo Card</title>
   </head>
   <body>
-    <main class="main">
-      <div class="card"></div>
+    <main class="h-screen flex justify-center items-center">
+      <div
+        id="card"
+        class="h-2/5 w-1/2 lg:max-w-prose lg:flex bg-yellow-200 flex justify-between items-center px-8 rounded-3xl"
+      >
+        <button
+          id="image-picker"
+          type="button"
+          class="h-4/5 w-2/5 border border-neutral-200 border-1 bg-cover bg-center"
+          style="background-image: url('./media/placeholder.png')"
+        >
+          <h3 id="button-title" class="hidden">Upload an image</h3>
+        </button>
+        <input id="image-input" type="file" class="hidden" />
+        <!-- <img src="./media/placeholder.png" class="h-full w-full" /> -->
+        <div class="justify-between leading-normal w-3/5 ml-8">
+          <div class="flex flex-col">
+            <input
+              value="Name"
+              placeholder="Type your name"
+              type="text"
+              class="text-gray-900 font-bold text-xl bg-inherit mb-2"
+            />
+            <input
+              value="Location"
+              placeholder="Type your location"
+              type="text"
+              class="text-gray-700 text-base bg-inherit mb-2"
+            />
+            <input type="date" class="text-gray-700 text-base bg-inherit" />
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
