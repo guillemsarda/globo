@@ -11,6 +11,7 @@
   </head>
   <body>
     <main class="h-screen flex justify-center items-center flex-col">
+      <!-- <img id="blah" src="" class="h-full w-full" /> -->
       <button
         type="button"
         class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000"
@@ -35,8 +36,13 @@
             <h3 id="upload-header" style="display: none">Upload an image</h3>
           </div>
         </button>
-        <input id="image-input" type="file" accept="image/*" class="hidden" />
-        <!-- <img src="./media/placeholder.png" class="h-full w-full" /> -->
+        <input
+          id="image-input"
+          type="file"
+          accept="image/*"
+          capture="user"
+          class="hidden"
+        />
         <div class="justify-between leading-normal w-3/5 ml-8">
           <div class="flex flex-col">
             <input
