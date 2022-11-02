@@ -2,11 +2,24 @@ $(document).ready(() => {
   const $imgPicker = $('#image-picker');
   const $imgInput = $('#image-input');
   const $datePicker = $('#date-picker');
+  const $downloadButton = $('#download-button');
+  const $nameInput = $('#name-input');
 
   $datePicker.attr('max', new Date().toISOString().split('T')[0]);
 
   /* EVENT BINDERS*/
   $imgPicker.on('click', () => $imgInput.trigger('click'));
+
+  $downloadButton.on('click', () => {
+    const userName = $nameInput.val().trim().toLowerCase().replace(/\s+/g, '-');
+    const opt = {
+      /* margin per side (mm) = (page width - card size)/2
+       margin per side = (210 - 160)/2 = 25mm */
+      margin: [10, 25, 0, 0],
+      filename: userName + '.pdf',
+    };
+    html2pdf(document.querySelector('#card'), opt);
+  });
 
   $datePicker.on('change', (e) => {
     /* If the input date is bigger than today's we force the user to input at least another year.
