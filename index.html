@@ -13,14 +13,15 @@
     <main class="h-screen flex justify-center items-center flex-col">
       <!-- <img id="blah" src="" class="h-full w-full" /> -->
       <button
+        id="download-button"
         type="button"
         class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000"
       >
-        <div>Show back</div>
+        <div>Download</div>
       </button>
       <div
         id="card"
-        class="h-2/5 w-1/2 lg:max-w-prose lg:flex bg-yellow-200 flex justify-between items-center px-8 rounded-3xl"
+        class="h-96 w-[38rem] lg:max-w-prose lg:flex bg-yellow-200 flex justify-between items-center px-8 rounded-3xl"
       >
         <button
           id="image-picker"
@@ -44,7 +45,7 @@
           class="hidden"
         />
         <div class="justify-between leading-normal w-3/5 ml-8">
-          <div class="flex flex-col">
+          <div class="flex flex-col [&>input]:outline-none">
             <input
               value="Name"
               placeholder="Type your name"
@@ -57,7 +58,11 @@
               type="text"
               class="text-gray-700 text-base bg-inherit mb-2"
             />
-            <input type="date" class="text-gray-700 text-base bg-inherit" />
+            <input
+              id="date-picker"
+              type="date"
+              class="text-gray-700 text-base bg-inherit"
+            />
           </div>
         </div>
       </div>

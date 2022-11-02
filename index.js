@@ -1,23 +1,34 @@
 $(document).ready(() => {
-  const $imgPckr = $('#image-picker');
+  const $imgPicker = $('#image-picker');
   const $imgInput = $('#image-input');
+  const $datePicker = $('#date-picker');
+
+  $datePicker.attr('max', new Date().toISOString().split('T')[0]);
 
   /* EVENT BINDERS*/
-  $imgPckr.on('click', () => $imgInput.trigger('click'));
+  $imgPicker.on('click', () => $imgInput.trigger('click'));
 
-  // Source of the followinf function: https://stackoverflow.com/a/12368976
+  $datePicker.on('change', (e) => {
+    /* If the input date is bigger than today's we force the user to input at least another year.
+     **Does not cover edge cases like invalid dates. */
+    if (Date.now() < +new Date(e.target.value)) {
+      const noYearDate = e.target.value.split('-').slice(1).join('-');
+      $datePicker.val('1980-' + noYearDate);
+    }
+  });
+  // Source of the following function: https://stackoverflow.com/a/12368976
   $imgInput.on('change', (e) => {
     const file = e.originalEvent.srcElement.files[0];
     const reader = new FileReader();
 
     reader.onloadend = function () {
-      $imgPckr.css('background-image', 'url(' + reader.result + ')');
+      $imgPicker.css('background-image', 'url(' + reader.result + ')');
     };
 
     reader.readAsDataURL(file);
   });
 
-  $imgPckr.hover(
+  $imgPicker.hover(
     () => {
       /* Since the parameter 'now' from the step function is inaccurate we have created 
       this 'animationStep' counter that will force the 'slideDown' method to be called only once. */
