@@ -18,30 +18,36 @@
   </head>
   <body>
     <main class="h-screen flex justify-center items-center flex-col">
-      <!-- <img id="blah" src="" class="h-full w-full" /> -->
       <button
         id="download-button"
         type="button"
-        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000"
+        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 mb-10"
       >
         <div>Download</div>
       </button>
       <div
         id="card"
-        class="h-96 w-[38rem] lg:max-w-prose lg:flex bg-yellow-200 flex justify-between items-center px-8 rounded-3xl"
+        style="background-image: url('./media/front-card.png')"
+        class="h-96 w-[38rem] lg:max-w-prose lg:flex flex justify-between items-center px-8 bg-cover"
       >
         <button
           id="image-picker"
           type="button"
           style="background-image: url('./media/placeholder.png')"
-          class="h-4/5 w-2/5 border border-neutral-200 border-1 bg-cover bg-center"
+          class="h-64 w-48 border border-neutral-200 border-1 bg-cover bg-center"
         >
           <div
             id="upload-container"
-            style="display: none; background-color: rgba(254, 240, 138, 0.343)"
+            style="display: none; background-color: rgba(249, 195, 15, 0.3)"
             class="h-full w-full flex justify-center items-center"
           >
-            <h3 id="upload-header" style="display: none">Upload an image</h3>
+            <h3
+              id="upload-header"
+              style="display: none"
+              class="text-gray-900 text-base"
+            >
+              Upload an image
+            </h3>
           </div>
         </button>
         <input
@@ -51,27 +57,41 @@
           capture="user"
           class="hidden"
         />
-        <div class="justify-between leading-normal w-3/5 ml-8">
-          <div class="flex flex-col [&>input]:outline-none">
-            <input
-              id="name-input"
-              value="Name"
-              placeholder="Type your name"
-              type="text"
-              class="text-gray-900 font-bold text-xl bg-inherit mb-2"
-            />
-            <input
-              value="Location"
-              placeholder="Type your location"
-              type="text"
-              class="text-gray-700 text-base bg-inherit mb-2"
-            />
-            <input
-              id="date-picker"
-              type="date"
-              class="text-gray-700 text-base bg-inherit"
-            />
-          </div>
+        <div
+          class="flex flex-col [&>input]:outline-none h-full pt-20 mt-3 mr-36"
+        >
+          <label
+            for="name-input"
+            class="text-gray-900 font-bold text-base bg-inherit"
+            >Name:</label
+          >
+          <input
+            id="name-input"
+            value="John Doe"
+            placeholder="Type your name"
+            type="text"
+            class="text-gray-900 text-base bg-inherit"
+          />
+          <label
+            for="date-picker"
+            class="text-gray-900 font-bold text-base bg-inherit mt-7"
+            >Date of birth:</label
+          >
+          <input
+            id="date-picker"
+            type="date"
+            class="text-gray-900 text-base bg-inherit"
+          />
+          <label
+            for="signature"
+            class="text-gray-900 font-bold text-base bg-inherit mt-6"
+            >Signature:</label
+          >
+          <input
+            type="text"
+            placeholder="Sign here"
+            class="text-gray-900 text-base bg-inherit placeholder-yellow-200"
+          />
         </div>
       </div>
     </main>
