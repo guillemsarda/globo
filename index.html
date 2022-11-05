@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- cdn to use html2pdf -->
+    <!-- CDN to use html2pdf -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
       integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
@@ -15,25 +15,60 @@
     ></script>
     <script src="index.js"></script>
     <title>Globo Card</title>
+    <link rel="icon" type="image/png" href="/media/globo-icon.png" />
   </head>
   <body>
-    <main class="h-screen flex justify-center items-center flex-col">
+    <main
+      class="h-screen flex justify-center items-center flex-col bg-[rgb(2,150,120)]"
+    >
+      <img
+        src="/media/globo-icon.png"
+        alt="red globo icon"
+        class="absolute z-0 left-1 top-1 -rotate-12 scale-125 invert hue-rotate-[140deg]"
+      />
+      <img
+        src="/media/globo-icon.png"
+        alt="orange globo icon"
+        class="absolute z-0 left-1 bottom-1 scale-50 hue-rotate-[-20deg]"
+      />
+      <img
+        src="/media/globo-icon.png"
+        alt="blue globo icon"
+        class="absolute z-0 right-1 rotate-[25deg] scale-125 invert hue-rotate-[-20deg]"
+      />
+      <img
+        src="/media/globo-icon.png"
+        alt="grey globo icon"
+        class="absolute z-0 bottom-1 -rotate-12 invert grayscale-[90%] brightness-90"
+      />
+      <img
+        src="/media/globo-icon.png"
+        alt="white globo icon"
+        class="absolute z-0 top-1 rotate-12 scale-75 brightness-200 grayscale"
+      />
       <button
         id="download-button"
         type="button"
-        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 mb-10"
+        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 mb-10 z-10"
       >
-        <div>Download</div>
+        <div>Descargar</div>
+      </button>
+      <button
+        id="reverse-card-button"
+        type="button"
+        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 z-10"
+      >
+        <div>Girar carné</div>
       </button>
       <div
-        id="card"
-        style="background-image: url('./media/front-card.png')"
-        class="h-96 w-[38rem] lg:max-w-prose lg:flex flex justify-between items-center px-8 bg-cover"
+        id="front-card"
+        style="background-image: url('/media/front-card.png')"
+        class="h-96 w-[38rem] flex justify-between items-center px-8 bg-cover z-10"
       >
         <button
           id="image-picker"
           type="button"
-          style="background-image: url('./media/placeholder.png')"
+          style="background-image: url('/media/placeholder.png')"
           class="h-64 w-48 border border-neutral-200 border-1 bg-cover bg-center"
         >
           <div
@@ -92,6 +127,22 @@
             placeholder="Sign here"
             class="text-gray-900 text-base bg-inherit placeholder-yellow-200"
           />
+        </div>
+      </div>
+      <div
+        id="back-card"
+        style="background-image: url('/media/back-card.png')"
+        class="h-96 w-[38rem] flex justify-end bg-cover z-10 hidden"
+      >
+        <div class="w-[57%] mt-8 pr-4">
+          <h2 class="text-[rgb(253,183,16)] font-semibold text-xl w-1/2">
+            Términos y Condiciones
+          </h2>
+          <p class="text-[rgb(231,231,231)] text-sm mt-1.5">
+            Este carnet es personal e intransferible, además, es prueba
+            fehaciente de que quien lo porta es ciudadano del mundo en cualquier
+            parte del globo. Bienvenidxs todxs.
+          </p>
         </div>
       </div>
     </main>

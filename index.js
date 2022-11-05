@@ -3,11 +3,24 @@ $(document).ready(() => {
   const $imgInput = $('#image-input');
   const $datePicker = $('#date-picker');
   const $downloadButton = $('#download-button');
+  const $reverseButton = $('#reverse-card-button');
   const $nameInput = $('#name-input');
+  const $frontCard = $('#front-card');
+  const $backCard = $('#back-card');
 
   $datePicker.attr('max', new Date().toISOString().split('T')[0]);
 
   /* EVENT BINDERS*/
+  $reverseButton.on('click', () => {
+    if ($frontCard.hasClass('hidden')) {
+      $backCard.addClass('hidden');
+      $frontCard.removeClass('hidden');
+    } else {
+      $frontCard.addClass('hidden');
+      $backCard.removeClass('hidden');
+    }
+  });
+
   $imgPicker.on('click', () => $imgInput.trigger('click'));
 
   $downloadButton.on('click', () => {
@@ -64,3 +77,5 @@ $(document).ready(() => {
     }
   );
 });
+
+// style="background-image: url('./media/bg.svg')" bg-no-repeat bg-center bg-cover
