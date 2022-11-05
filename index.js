@@ -12,13 +12,6 @@ $(document).ready(() => {
 
   /* EVENT BINDERS*/
   $reverseButton.on('click', () => {
-    // if ($frontCard.hasClass('hidden')) {
-    //   $backCard.addClass('hidden');
-    //   $frontCard.removeClass('hidden');
-    // } else {
-    //   $frontCard.addClass('hidden');
-    //   $backCard.removeClass('hidden');
-    // }
     if ($backCard.hasClass('opacity-0')) {
       $backCard.removeClass('opacity-0');
       $frontCard.addClass('opacity-0');
@@ -38,7 +31,17 @@ $(document).ready(() => {
       margin: [10, 25, 0, 0],
       filename: userName + '.pdf',
     };
-    html2pdf(document.querySelector('#card'), opt);
+    const main = document.createElement('main');
+    const space = document.createElement('br');
+    // Making a deep copy of the nodes to not modify the original ones
+    const frontCardCopy = document.querySelector('#front-card').cloneNode(true);
+    const backCardCopy = document.querySelector('#back-card').cloneNode(true);
+    backCardCopy.classList.remove('absolute');
+    main.appendChild(frontCardCopy);
+    main.appendChild(space);
+    main.appendChild(space);
+    main.appendChild(backCardCopy);
+    html2pdf(main, opt);
   });
 
   $datePicker.on('change', (e) => {
