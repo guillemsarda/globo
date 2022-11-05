@@ -36,14 +36,19 @@ $(document).ready(() => {
     // * We need to do this in VanillaJS since the html2pdf package requires it.
     const main = document.createElement('main');
     const space = document.createElement('br');
+
     // Making a deep copy of the nodes to not modify the original ones.
     const frontCardCopy = document.querySelector('#front-card').cloneNode(true);
     const backCardCopy = document.querySelector('#back-card').cloneNode(true);
+
+    frontCardCopy.classList.remove('absolute');
     backCardCopy.classList.remove('absolute');
+
     main.appendChild(frontCardCopy);
     main.appendChild(space);
     main.appendChild(space);
     main.appendChild(backCardCopy);
+
     html2pdf(main, opt);
   });
 

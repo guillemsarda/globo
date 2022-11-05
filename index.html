@@ -47,6 +47,7 @@
     <!-- *We have used this https://hypercolor.dev/generator to generate the gradient. -->
     <header class="flex justify-start items-center">
       <img
+        id="globo-logo"
         src="/media/globo-logo.svg"
         alt="logo de globo"
         class="w-96 z-50 pl-4 pr-28 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white via-white to-transparent border-0 rounded-br-full"
@@ -56,30 +57,30 @@
       class="h-screen flex justify-start items-center flex-col justify-start"
     >
       <!-- BACKGROUND -->
-      <!-- <img
+      <img
         src="/media/globo-icon.png"
         alt="red globo icon"
-        class="absolute z-0 left-1 top-1 -rotate-12 scale-125 invert hue-rotate-[140deg]"
-      /> -->
+        class="absolute z-0 -rotate-12 invert hue-rotate-[140deg] 2xl:scale-125 2xl:left-5 2xl:top-[200px] md:-left-5 md:top-24 md:scale-75"
+      />
       <img
         src="/media/globo-icon.png"
         alt="orange globo icon"
-        class="absolute z-0 left-1 bottom-1 scale-50 hue-rotate-[-20deg]"
+        class="absolute z-0 hue-rotate-[-20deg] scale-50 2xl:left-80 2xl:bottom-1 md:left-44 md:-bottom-14"
       />
       <img
         src="/media/globo-icon.png"
         alt="blue globo icon"
-        class="absolute z-0 right-1 rotate-[25deg] scale-125 invert hue-rotate-[-20deg]"
+        class="absolute z-0 rotate-[25deg] invert hue-rotate-[-20deg] right-1 scale-125"
       />
       <img
         src="/media/globo-icon.png"
         alt="grey globo icon"
-        class="absolute z-0 bottom-1 -rotate-12 invert grayscale-[90%] brightness-90"
+        class="absolute z-0 -rotate-12 invert grayscale-[90%] brightness-90 2xl:bottom-1 2xl:right-[500px] md:hidden 2xl:block"
       />
       <img
         src="/media/globo-icon.png"
         alt="white globo icon"
-        class="absolute z-0 top-1 rotate-12 scale-75 brightness-200 grayscale"
+        class="absolute z-0 rotate-12 brightness-200 grayscale scale-75 -top-20 2xl:left-[450px] md:right-72 md:scale-50"
       />
       <!-- BUTTONS -->
       <aside class="z-10 flex justify-center">
@@ -109,7 +110,7 @@
       <div
         id="front-card"
         style="background-image: url('/media/front-card.png')"
-        class="h-96 w-[38rem] absolute bottom-1/3 flex justify-between items-center px-8 bg-cover z-10 transition-opacity duration-500 z-50"
+        class="h-96 w-[38rem] absolute flex justify-between items-center px-8 bg-cover transition-opacity duration-500 z-50 2xl:bottom-1/3 md:bottom-[15%]"
       >
         <button
           id="image-picker"
@@ -181,7 +182,7 @@
       <div
         id="back-card"
         style="background-image: url('/media/back-card.png')"
-        class="h-96 w-[38rem] flex justify-end bg-cover z-10 absolute bottom-1/3 transition-opacity opacity-0 duration-500 z-20"
+        class="h-96 w-[38rem] flex justify-end bg-cover z-10 absolute transition-opacity opacity-0 duration-500 z-20 2xl:bottom-1/3 md:bottom-[15%]"
       >
         <div class="w-[57%] mt-8 pr-4">
           <h2 class="text-[rgb(253,183,16)] font-semibold text-xl w-1/2">
