@@ -1,16 +1,18 @@
 $(document).ready(() => {
   const $imgPicker = $('#image-picker');
   const $imgInput = $('#image-input');
+  const $nameInput = $('#name-input');
+  const $signInput = $('#signature-input');
   const $datePicker = $('#date-picker');
   const $downloadButton = $('#download-button');
   const $reverseButton = $('#reverse-card-button');
-  const $nameInput = $('#name-input');
   const $frontCard = $('#front-card');
   const $backCard = $('#back-card');
 
   $datePicker.attr('max', new Date().toISOString().split('T')[0]);
 
   /* EVENT BINDERS*/
+  $('#name-input').on('input', (e) => $signInput.val(e.target.value));
   $reverseButton.on('click', () => {
     if ($backCard.hasClass('opacity-0')) {
       $backCard.removeClass('opacity-0');
@@ -31,9 +33,10 @@ $(document).ready(() => {
       margin: [10, 25, 0, 0],
       filename: userName + '.pdf',
     };
+    // * We need to do this in VanillaJS since the html2pdf package requires it.
     const main = document.createElement('main');
     const space = document.createElement('br');
-    // Making a deep copy of the nodes to not modify the original ones
+    // Making a deep copy of the nodes to not modify the original ones.
     const frontCardCopy = document.querySelector('#front-card').cloneNode(true);
     const backCardCopy = document.querySelector('#back-card').cloneNode(true);
     backCardCopy.classList.remove('absolute');
