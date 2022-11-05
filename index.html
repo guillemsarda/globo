@@ -49,21 +49,21 @@
       <button
         id="download-button"
         type="button"
-        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 mb-10 z-10"
+        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 mb-10 z-10 absolute top-10"
       >
         <div>Descargar</div>
       </button>
       <button
         id="reverse-card-button"
         type="button"
-        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 z-10"
+        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 z-10 absolute top-1"
       >
         <div>Girar carné</div>
       </button>
       <div
         id="front-card"
         style="background-image: url('/media/front-card.png')"
-        class="h-96 w-[38rem] flex justify-between items-center px-8 bg-cover z-10"
+        class="h-96 w-[38rem] flex justify-between items-center px-8 bg-cover z-10 absolute transition-opacity duration-500 z-50"
       >
         <button
           id="image-picker"
@@ -132,7 +132,7 @@
       <div
         id="back-card"
         style="background-image: url('/media/back-card.png')"
-        class="h-96 w-[38rem] flex justify-end bg-cover z-10 hidden"
+        class="h-96 w-[38rem] flex justify-end bg-cover z-10 absolute transition-opacity opacity-0 duration-500 z-20"
       >
         <div class="w-[57%] mt-8 pr-4">
           <h2 class="text-[rgb(253,183,16)] font-semibold text-xl w-1/2">

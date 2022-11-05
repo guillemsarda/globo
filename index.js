@@ -12,12 +12,19 @@ $(document).ready(() => {
 
   /* EVENT BINDERS*/
   $reverseButton.on('click', () => {
-    if ($frontCard.hasClass('hidden')) {
-      $backCard.addClass('hidden');
-      $frontCard.removeClass('hidden');
+    // if ($frontCard.hasClass('hidden')) {
+    //   $backCard.addClass('hidden');
+    //   $frontCard.removeClass('hidden');
+    // } else {
+    //   $frontCard.addClass('hidden');
+    //   $backCard.removeClass('hidden');
+    // }
+    if ($backCard.hasClass('opacity-0')) {
+      $backCard.removeClass('opacity-0');
+      $frontCard.addClass('opacity-0');
     } else {
-      $frontCard.addClass('hidden');
-      $backCard.removeClass('hidden');
+      $frontCard.removeClass('opacity-0');
+      $backCard.addClass('opacity-0');
     }
   });
 
