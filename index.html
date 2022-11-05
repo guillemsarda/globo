@@ -14,18 +14,49 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="index.js"></script>
-    <title>Globo Card</title>
-    <link rel="icon" type="image/png" href="/media/globo-icon.png" />
+    <title>Bienvenido al Globo</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="media/favicon_directory/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="media/favicon_directory/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="media/favicon_directory/favicon-16x16.png"
+    />
+    <link rel="manifest" href="media/favicon_directory/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="media/favicon_directory/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
-  <body>
-    <main
-      class="h-screen flex justify-center items-center flex-col bg-[rgb(2,150,120)]"
-    >
+  <body class="bg-[rgb(2,150,120)]">
+    <!-- HEADER -->
+    <header class="flex justify-start items-center">
       <img
+        src="/media/globo-logo.svg"
+        alt="logo de globo"
+        class="w-96 z-50 pl-4 pr-28 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white via-white to-transparent border-0 rounded-br-full"
+      />
+    </header>
+    <main class="h-screen flex justify-start items-center flex-col">
+      <!-- BACKGROUND -->
+      <!-- <img
         src="/media/globo-icon.png"
         alt="red globo icon"
         class="absolute z-0 left-1 top-1 -rotate-12 scale-125 invert hue-rotate-[140deg]"
-      />
+      /> -->
       <img
         src="/media/globo-icon.png"
         alt="orange globo icon"
@@ -46,20 +77,22 @@
         alt="white globo icon"
         class="absolute z-0 top-1 rotate-12 scale-75 brightness-200 grayscale"
       />
+      <!-- BUTTONS -->
       <button
         id="download-button"
         type="button"
-        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 mb-10 z-10 absolute top-10"
+        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 mb-10 z-10"
       >
         <div>Descargar</div>
       </button>
       <button
         id="reverse-card-button"
         type="button"
-        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 z-10 absolute top-1"
+        class="bg-red-200 w-96 hover:bg-blue-400 transition duration-1000 z-10"
       >
         <div>Girar carné</div>
       </button>
+      <!-- FRONT CARD -->
       <div
         id="front-card"
         style="background-image: url('/media/front-card.png')"
@@ -102,15 +135,15 @@
           >
           <input
             id="name-input"
-            value="John Doe"
-            placeholder="Type your name"
+            value=""
+            placeholder="Escriba su nombre"
             type="text"
-            class="text-gray-900 text-base bg-inherit"
+            class="text-gray-900 text-base bg-inherit placeholder-yellow-200"
           />
           <label
             for="date-picker"
             class="text-gray-900 font-bold text-base bg-inherit mt-7"
-            >Date of birth:</label
+            >Fecha de nacimiento:</label
           >
           <input
             id="date-picker"
@@ -120,16 +153,18 @@
           <label
             for="signature-input"
             class="text-gray-900 font-bold text-base bg-inherit mt-6"
-            >Signature:</label
+            >Firma:</label
           >
           <input
             id="signature-input"
             type="text"
-            placeholder="Sign here"
+            placeholder="Firme aquí"
+            readonly
             class="text-gray-900 text-3xl bg-inherit placeholder-yellow-200 font-darlington"
           />
         </div>
       </div>
+      <!-- BACK CARD -->
       <div
         id="back-card"
         style="background-image: url('/media/back-card.png')"
