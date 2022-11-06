@@ -8,6 +8,7 @@ $(document).ready(() => {
   const $reverseButton = $('#reverse-card-button');
   const $frontCard = $('#front-card');
   const $backCard = $('#back-card');
+
   $datePicker.attr('max', new Date().toISOString().split('T')[0]);
 
   /* EVENT BINDERS*/
@@ -73,29 +74,31 @@ $(document).ready(() => {
 
     reader.readAsDataURL(file);
   });
-
-  $imgPicker.hover(
-    () => {
-      /* Since the parameter 'now' from the step function is inaccurate we have created 
-      this 'animationStep' counter that will force the 'slideDown' method to be called only once. */
-      let animationStep = 0;
-      $('#upload-container').animate(
-        { height: 'show' },
-        {
-          duration: 300,
-          step: () => {
-            animationStep == 10 && $('#upload-header').slideDown('fast');
-            animationStep++;
-          },
-        }
-      );
-    },
-    () => {
-      $('#upload-header').hide();
-      // The 'stop' method removes all the animations on the given element.
-      $('#upload-container').stop(true).animate({ height: 'hide' });
-    }
-  );
+  if (screen.width > 640) {
+    // Disable hover in mobile devices
+    $imgPicker.hover(
+      () => {
+        /* Since the parameter 'now' from the step function is inaccurate we have created 
+        this 'animationStep' counter that will force the 'slideDown' method to be called only once. */
+        let animationStep = 0;
+        $('#upload-container').animate(
+          { height: 'show' },
+          {
+            duration: 300,
+            step: () => {
+              animationStep == 10 && $('#upload-header').slideDown('fast');
+              animationStep++;
+            },
+          }
+        );
+      },
+      () => {
+        $('#upload-header').hide();
+        // The 'stop' method removes all the animations on the given element.
+        $('#upload-container').stop(true).animate({ height: 'hide' });
+      }
+    );
+  }
 });
 
 // style="background-image: url('./media/bg.svg')" bg-no-repeat bg-center bg-cover
