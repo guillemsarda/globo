@@ -42,48 +42,50 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
   </head>
-  <body class="bg-[rgb(2,150,120)]">
+  <body class="bg-[rgb(2,150,120)] overflow-hidden">
     <!-- HEADER -->
     <!-- *We have used this https://hypercolor.dev/generator to generate the gradient. -->
-    <header class="flex justify-start items-center">
+    <header
+      class="h-20 w-screen flex justify-center items-center md:justify-start bg-white md:bg-transparent md:h-auto"
+    >
       <img
         id="globo-logo"
         src="/media/globo-logo.svg"
         alt="logo de globo"
-        class="w-96 z-50 pl-4 pr-28 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white via-white to-transparent border-0 rounded-br-full"
+        class="scale-50 pb-6 z-50 md:scale-100 md:pb-0 md:w-96 md:pl-4 md:pr-28 md:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] md:from-white md:via-white md:to-transparent md:border-0 md:rounded-br-full"
       />
     </header>
     <main
-      class="h-screen flex justify-start items-center flex-col justify-start"
+      class="h-screen w-screen flex justify-start items-center flex-col justify-start overflow-hidden"
     >
       <!-- BACKGROUND -->
       <img
         src="/media/globo-icon.png"
         alt="red globo icon"
-        class="absolute z-0 -rotate-12 invert hue-rotate-[140deg] 2xl:scale-125 2xl:left-5 2xl:top-[200px] md:-left-5 md:top-24 md:scale-75"
+        class="absolute z-0 scale-[25%] -rotate-12 invert hue-rotate-[140deg] left-[-100px] top-0 2xl:scale-125 2xl:left-5 2xl:top-[200px] md:-left-5 md:top-24 md:scale-75"
       />
       <img
         src="/media/globo-icon.png"
         alt="orange globo icon"
-        class="absolute z-0 hue-rotate-[-20deg] scale-50 2xl:left-80 2xl:bottom-1 md:left-44 md:-bottom-14"
+        class="absolute z-0 scale-[25%] hue-rotate-[-20deg] left-[-100px] bottom-[-100px] 2xl:left-80 2xl:bottom-1 md:scale-50 md:left-44 md:-bottom-14"
       />
       <img
         src="/media/globo-icon.png"
         alt="blue globo icon"
-        class="absolute z-0 rotate-[25deg] invert hue-rotate-[-20deg] right-1 scale-125"
+        class="absolute z-0 scale-[25%] rotate-[25deg] invert hue-rotate-[-20deg] top-0 right-[-100px] md:right-1 md:scale-125"
       />
       <img
         src="/media/globo-icon.png"
         alt="grey globo icon"
-        class="absolute z-0 -rotate-12 invert grayscale-[90%] brightness-90 2xl:bottom-1 2xl:right-[500px] md:hidden 2xl:block"
+        class="absolute z-0 scale-[25%] -rotate-12 invert hidden grayscale-[90%] brightness-90 2xl:bottom-1 2xl:right-[500px] 2xl:block 2xl:scale-75"
       />
       <img
         src="/media/globo-icon.png"
         alt="white globo icon"
-        class="absolute z-0 rotate-12 brightness-200 grayscale scale-75 -top-20 2xl:left-[450px] md:right-72 md:scale-50"
+        class="absolute z-0 scale-[25%] rotate-12 brightness-200 grayscale bottom-[-100px] right-[-100px] md:scale-75 md:-top-20 2xl:left-[450px] md:right-72 md:scale-50"
       />
       <!-- BUTTONS -->
-      <aside class="z-10 flex justify-center">
+      <aside class="z-10 flex justify-center mt-6 md:mt-0">
         <button
           id="download-button"
           class="hover:bg-[rgb(249,195,15)] bg-gray-300 transition duration-500 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center w-36 justify-center"
@@ -110,13 +112,13 @@
       <div
         id="front-card"
         style="background-image: url('/media/front-card.png')"
-        class="h-96 w-[38rem] absolute flex justify-between items-center px-8 bg-cover transition-opacity duration-500 z-50 2xl:bottom-1/3 md:bottom-[15%]"
+        class="w-80 h-52 top-[250px] absolute flex justify-between items-center bg-center bg-cover bg-no-repeat px-5 md:px-8 md:bg-cover transition-opacity duration-500 z-50 2xl:bottom-1/3 md:h-96 md:w-[38rem] md:bottom-12"
       >
         <button
           id="image-picker"
           type="button"
           style="background-image: url('/media/placeholder.png')"
-          class="h-64 w-48 border border-neutral-200 border-1 bg-cover bg-center"
+          class="h-32 w-24 border border-neutral-200 border-1 bg-cover bg-center md:h-64 md:w-48"
         >
           <div
             id="upload-container"
@@ -139,12 +141,13 @@
           capture="user"
           class="hidden"
         />
+        <!-- INPUTS -->
         <div
-          class="flex flex-col [&>input]:outline-none h-full pt-20 mt-3 mr-36"
+          class="flex flex-col [&>input]:outline-none md:h-full -mt-1 mr-8 md:pt-20 md:mt-3 md:mr-36"
         >
           <label
             for="name-input"
-            class="text-gray-900 font-bold text-base bg-inherit"
+            class="text-gray-900 font-bold text-xs bg-inherit md:text-base"
             >Name:</label
           >
           <input
@@ -152,21 +155,21 @@
             value=""
             placeholder="Escriba su nombre"
             type="text"
-            class="text-gray-900 text-base bg-inherit placeholder-yellow-200"
+            class="text-gray-900 text-xs md:text-base bg-inherit placeholder-yellow-200"
           />
           <label
             for="date-picker"
-            class="text-gray-900 font-bold text-base bg-inherit mt-7"
+            class="text-gray-900 font-bold text-xs md:text-base bg-inherit mt-2 md:mt-7"
             >Fecha de nacimiento:</label
           >
           <input
             id="date-picker"
             type="date"
-            class="text-gray-900 text-base bg-inherit"
+            class="text-gray-900 text-xs md:text-base bg-inherit"
           />
           <label
             for="signature-input"
-            class="text-gray-900 font-bold text-base bg-inherit mt-6"
+            class="text-gray-900 font-bold text-xs md:text-base bg-inherit mt-2 md:mt-6"
             >Firma:</label
           >
           <input
@@ -174,7 +177,7 @@
             type="text"
             placeholder="Firme aquí"
             readonly
-            class="text-gray-900 text-3xl bg-inherit placeholder-yellow-200 font-darlington"
+            class="text-gray-900 text-base bg-inherit placeholder-yellow-200 font-darlington md:text-3xl"
           />
         </div>
       </div>
@@ -182,13 +185,17 @@
       <div
         id="back-card"
         style="background-image: url('/media/back-card.png')"
-        class="h-96 w-[38rem] flex justify-end bg-cover z-10 absolute transition-opacity opacity-0 duration-500 z-20 2xl:bottom-1/3 md:bottom-[15%]"
+        class="w-80 h-52 top-[250px] bg-cover bg-center bg-no-repeat flex justify-end z-10 absolute transition-opacity opacity-0 duration-500 z-20 2xl:bottom-1/3 md:bg-cover md:h-96 md:w-[38rem] md:bottom-12"
       >
-        <div class="w-[57%] mt-8 pr-4">
-          <h2 class="text-[rgb(253,183,16)] font-semibold text-xl w-1/2">
+        <div class="w-[57%] mt-4 pr-2 md:mt-8 md:pr-4">
+          <h2
+            class="text-[rgb(253,183,16)] font-semibold text-xs md:text-xl w-1/2"
+          >
             Términos y Condiciones
           </h2>
-          <p class="text-[rgb(231,231,231)] text-sm mt-1.5">
+          <p
+            class="text-[rgb(231,231,231)] text-[8px] mt-1 md:text-sm md:mt-1.5"
+          >
             Este carnet es personal e intransferible, además, es prueba
             fehaciente de que quien lo porta es ciudadano del mundo en cualquier
             parte del globo. Bienvenidxs todxs.

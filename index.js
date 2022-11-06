@@ -43,6 +43,9 @@ $(document).ready(() => {
 
     frontCardCopy.classList.remove('absolute');
     backCardCopy.classList.remove('absolute');
+    backCardCopy.classList.contains('opacity-0')
+      ? backCardCopy.classList.remove('opacity-0')
+      : frontCardCopy.classList.remove('opacity-0');
 
     main.appendChild(frontCardCopy);
     main.appendChild(space);
