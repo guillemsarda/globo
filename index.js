@@ -8,7 +8,7 @@ $(document).ready(() => {
   const $reverseButton = $('#reverse-card-button');
   const $frontCard = $('#front-card');
   const $backCard = $('#back-card');
-
+  console.log(navigator.userAgent);
   $datePicker.attr('max', new Date().toISOString().split('T')[0]);
 
   /* EVENT BINDERS*/
