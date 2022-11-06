@@ -13,12 +13,16 @@ $(document).ready(() => {
 
   /* EVENT BINDERS*/
   $('#name-input').on('input', (e) => $signInput.val(e.target.value));
+
   $reverseButton.on('click', () => {
     if ($backCard.hasClass('opacity-0')) {
       $backCard.removeClass('opacity-0');
       $frontCard.addClass('opacity-0');
+      // We add and remove the z-index to not be able to write when we show the other part
+      $frontCard.removeClass('z-50');
     } else {
       $frontCard.removeClass('opacity-0');
+      $frontCard.addClass('z-50');
       $backCard.addClass('opacity-0');
     }
   });
