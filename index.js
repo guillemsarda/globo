@@ -1,24 +1,28 @@
 $(document).ready(() => {
-  const $imgPicker = $('#image-picker');
+  /* CARDS */
+  const $frontCard = $('#front-card');
+  const $backCard = $('#back-card');
+  /* FRONT CARD INPUTS */
   const $imgInput = $('#image-input');
   const $nameInput = $('#name-input');
   const $signInput = $('#signature-input');
+  const $imgPicker = $('#image-picker');
   const $datePicker = $('#date-picker');
+  /* BUTTONS */
   const $downloadButton = $('#download-button');
   const $reverseButton = $('#reverse-card-button');
-  const $frontCard = $('#front-card');
-  const $backCard = $('#back-card');
 
+  // Setting dynamically maximum date available.
   $datePicker.attr('max', new Date().toISOString().split('T')[0]);
 
-  /* EVENT BINDERS*/
+  /* EVENT BINDERS */
   $('#name-input').on('input', (e) => $signInput.val(e.target.value));
 
   $reverseButton.on('click', () => {
     if ($backCard.hasClass('opacity-0')) {
       $backCard.removeClass('opacity-0');
       $frontCard.addClass('opacity-0');
-      // We add and remove the z-index to not be able to write when we show the other part
+      // We add and remove the z-index to not being able to write when we show the other part.
       $frontCard.removeClass('z-50');
     } else {
       $frontCard.removeClass('opacity-0');
@@ -67,7 +71,9 @@ $(document).ready(() => {
       $datePicker.val('1980-' + noYearDate);
     }
   });
-  // Source of the following function: https://stackoverflow.com/a/12368976
+
+  /* Function to read the selected image and place it in the background.
+   Source: https://stackoverflow.com/a/12368976. */
   $imgInput.on('change', (e) => {
     const file = e.originalEvent.srcElement.files[0];
     const reader = new FileReader();
@@ -78,8 +84,9 @@ $(document).ready(() => {
 
     reader.readAsDataURL(file);
   });
+
+  // Disable hover in mobile devices
   if (screen.width > 640) {
-    // Disable hover in mobile devices
     $imgPicker.hover(
       () => {
         /* Since the parameter 'now' from the step function is inaccurate we have created 
@@ -104,5 +111,3 @@ $(document).ready(() => {
     );
   }
 });
-
-// style="background-image: url('./media/bg.svg')" bg-no-repeat bg-center bg-cover
