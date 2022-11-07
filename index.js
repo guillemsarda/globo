@@ -40,7 +40,9 @@ $(document).ready(() => {
        margin per side = (210 - 160)/2 = 25mm */
       margin: [10, 25, 0, 0],
       filename: userName + '.pdf',
+      jsPDF: { format: 'a4' },
     };
+
     // * We need to do this in VanillaJS since the html2pdf package requires it.
     const main = document.createElement('main');
     const space = document.createElement('br');
@@ -60,7 +62,11 @@ $(document).ready(() => {
     main.appendChild(space);
     main.appendChild(backCardCopy);
 
-    html2pdf(main, opt);
+    html2pdf()
+      .from(main)
+      .set(opt)
+      .save()
+      .catch((e) => console.log(e));
   });
 
   $datePicker.on('change', (e) => {
