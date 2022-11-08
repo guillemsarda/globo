@@ -51,10 +51,10 @@ $(document).ready(() => {
     const frontCardCopy = document.querySelector('#front-card').cloneNode(true);
     const backCardCopy = document.querySelector('#back-card').cloneNode(true);
 
-    frontCardCopy.classList.remove('absolute');
-    backCardCopy.classList.remove('absolute');
-    backCardCopy.classList.contains('opacity-0')
-      ? backCardCopy.classList.remove('opacity-0')
+    frontCardCopy.classList.remove('md:absolute');
+    backCardCopy.classList.remove('md:absolute');
+    backCardCopy.classList.contains('md:opacity-0')
+      ? backCardCopy.classList.remove('md:opacity-0')
       : frontCardCopy.classList.remove('opacity-0');
 
     main.appendChild(frontCardCopy);
