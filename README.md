@@ -2,7 +2,7 @@
 
 [www.bienvenidoalglobo.top](www.bienvenidoalglobo.top)
 
-This is a webpage that was created for my friend Monica. She wanted a website for master's project. 
+This is a webpage that was created for my friend Monica. She wanted a website for a master's project. 
 
 The aim of the project was to assert people's rights to free access to any country. Therefore, she wanted to create a **global ID card** that everyone is allowed to get. And this what the webpage delivers.
 
