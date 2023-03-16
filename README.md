@@ -1,6 +1,6 @@
 # Globo
 
-[www.bienvenidoalglobo.top](www.bienvenidoalglobo.top)
+[www.bienvenidoalglobo.top](https://www.bienvenidoalglobo.top)
 
 This is a webpage that was created for my friend Monica. She wanted a website for a master's project. 
 
